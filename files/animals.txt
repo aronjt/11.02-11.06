@@ -1,0 +1,50 @@
+Nyuszt,szárazföldi,2.3,40,10
+Borz,szárazföldi,13,20,15
+Vidra,vízi,3,30,10
+Zöld gyík,szárazföldi,0.1,23,5
+Kecskebéka,vízi,0.2,19,6
+Csuszka,légi,0.02,57,10
+Süvöltő,légi,0.04,62,17
+Zöld levelibéka,vízi,0.2,12,4
+Foltos szalamandra,szárazföldi,0.15,10,3
+Vízi sikló,vízi,1.2,13,7
+Keresztes vipera,szárazföldi,2,11,10
+Búbos vöcsök,szárazfödi,8,7,15
+Kanalas gém,légi,12,50,20
+Vöröskánya,légi,1.6,90,26
+Siketfajd,szárazföldi,2.5,20,10
+Nagy fülesbagoly,légi,2.8,70,9
+Fekete harkály,légi,1.7,55,15
+Zöld küllő,légi,0.2,75,7
+Lappantyú,légi,0.1,82,8
+Havasi sarlósfecske,légi,1.35,160,5
+Fátyolos medúza,vízi,2,8,3
+Orsógiliszta,szárazföldi,0.001,0.2,2
+Folyami rák,vízi,2,4,4
+Fogas süllő,vízi,4,15,10
+Jávorszarvas,szárazföldi,700,30,25
+Gímszarvas,szárazföldi,300,62,20
+Mezei pacsirta,légi,0.05,68,12
+Csilpcsap füzike,légi,0.08,48,15
+Feketerigó,légi,0.1,92,16
+Fürge cselle,vízi,0.05,18,4
+Ponty,vízi,14,27,20
+Kárpáti skorpió,szárazföldi,0.009,11,2
+Botos kölönte,vízi,0.03,16,4
+Meggyvágó,légi,0.07,53,10,
+Dolmányos varjú,légi,0.5,73,19
+Rezes futrinka,szárazföldi,0.003,17,0.8
+Réti csík,vízi,4,20,21
+Keleti sün,szárazföldi,1.5,7,4
+Mezei cickány,szárazföldi,0.4,30,1.5
+Hosszúfülű denevér,légi,0.2,55,21
+Nagy pele,szárazföldi,0.25,25,6
+Mókus,szárazföldi,0.5,30,10
+Vadmacska,szárazföldi,6.5,32,14
+Hiúz,szárazföldi,25,43,7
+Énekes hattyú,légi,16,60,80
+Kerecsensólyom,légi,1.3,80,22
+Parlagi sas,légi,4.5,120,50
+Róka,szárazföldi,14,50,5
+Muflon,szárazföldi,55,27,20
+Őz,szárazföldi,30,70,10

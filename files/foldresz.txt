@@ -1,0 +1,50 @@
+Fogas süllő,Európa,Afrika
+Réti csík,Európa,Dél-Amerika
+Mókus,Európa,Észak-Amerika
+Nyuszt,Európa,Ázsia
+Borz,Európa,Észak-Amerika
+Fürge cselle,Európa
+Ponty,Európa,Észak-Amerika,Afrika
+Kárpáti skorpió,Európa
+Zöld levelibéka,Európa,Észak-Amerika,Dél-Amerika
+Foltos szalamandra,Európa,Ázsia,Dél-Amerika,Észak-Amerika
+Vízi sikló,Európa
+Keresztes vipera,Afrika
+Búbos vöcsök,Észak-Amerika
+Kanalas gém,Európa
+Róka,Európa,Észak-Amerika,Ázsia
+Muflon,Európa,Észak-Amerika
+Énekes hattyú,Európa
+Gímszarvas,Európa,Észak-Amerika
+Őz,Európa,Észak-Amerika
+Kerecsensólyom,Észak-Amerika,Európa
+Parlagi sas,Észak-Amerika,Európa
+kecskebéka,Európa,Észak-Amerika,Dél-Amerika,Afrika
+Keleti sün,Ázsia,Európa
+Mezei cickány,Afrika
+Vöröskánya,Észak-Amerika,Dél-Amerika
+Rezes futrinka,Európa,Észak-Amerika
+Fátyolos medúza,Európa,Ázsia,Dél-Amerika,Észak-Amerika,Afrika,Ausztrália
+Siketfajd,Észak-Amerika,Ázsia
+Nagy fülesbagoly,Európa,Észak-Amerika
+Fekete harkály,Európa
+Mezei pacsirta,Európa
+Csilpcsap füzike,Európa,Ázsia
+Feketerigó,Európa
+Csuszka,Európa
+Süvöltő,Európa
+Meggyvágó,Európa
+Dolmányos varjú,Európa
+Botos kölönte,Európa,Észak-Amerika
+Zöld gyík,Európa,Észak-Amerika,Dél-Amerika,Afrika
+Hosszúfülű denevér,Európa,Dél-Amerika,Észak-Amerika,Afrika
+Nagy pele,Ázsia,Észak-Amerika,Európa
+Vidra,Európa,Észak-Amerika,Ázsia
+Zöld küllő,Dél-Amerika,Ázsia
+Lappantyú,Európa,Afrika
+Havasi sarlósfecske,Európa,Afrika
+Vadmacska,Európa,Észak-Amerika,Ázsia,Afrika
+Hiúz,Európa,Észak-Amerika,Ázsia
+Jávorszarvas,Észak-Amerika
+Orsógiliszta,Európa,Ázsia,Dél-Amerika,Észak-Amerika,Afrika,Ausztrália
+Folyami rák,Európa
