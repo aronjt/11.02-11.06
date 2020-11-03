@@ -20,5 +20,7 @@ public class Main {
         people.professionNum();
         //6.
         people.pittiKatalin();
+        //7.
+        people.graphicElseJob();
     }
 }

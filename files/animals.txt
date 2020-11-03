@@ -9,7 +9,7 @@ Zöld levelibéka,vízi,0.2,12,4
 Foltos szalamandra,szárazföldi,0.15,10,3
 Vízi sikló,vízi,1.2,13,7
 Keresztes vipera,szárazföldi,2,11,10
-Búbos vöcsök,szárazfödi,8,7,15
+Búbos vöcsök,szárazföldi,8,7,15
 Kanalas gém,légi,12,50,20
 Vöröskánya,légi,1.6,90,26
 Siketfajd,szárazföldi,2.5,20,10

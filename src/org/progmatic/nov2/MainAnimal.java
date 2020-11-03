@@ -21,6 +21,9 @@ public class MainAnimal {
        // System.out.println(animals);
         fastestAnimal(animals);
         fastestAndSlowestFieldAnimals(animals);
+        fastestAnimalInEu();
+        force();
+        weight();
     }
 
     public static ArrayList<Animal> dataIntoList() throws FileNotFoundException {
@@ -60,20 +63,80 @@ public class MainAnimal {
     }
 
     public static void fastestAndSlowestFieldAnimals(List<Animal> animals) {
-        fastestTypeAnimalComparator comparator = new fastestTypeAnimalComparator();
-        Collections.sort(animals, comparator);
-        int counter = 1;
+        fastestAnimalComparator comparator = new fastestAnimalComparator();
+        slowestAnimalComparator comparator2 = new slowestAnimalComparator();
+        animals.sort(comparator);
+        int nr = 1;
         for (Animal animal : animals) {
-            if (animal.getType().equals("szárazföldi") && counter < 4) {
-                System.out.println("A " + counter + " gyorsabb " + animal.getSpecies());
-                counter++;
+            if (animal.getType().equals("szárazföldi") && nr < 4) {
+                System.out.println(animal.getSpecies() + " seb: " + animal.getMaxSpeed());
+                nr++;
             }
         }
-        int countSlow = 1;
+        animals.sort(comparator2);
+        int nm = 1;
         for (Animal animal : animals) {
-            if (animal.getType().equals("szárazföldi") && countSlow < 4) {
-                System.out.println("A " + countSlow + " lasabb " + animal.getSpecies());
-                countSlow++;
+            if (animal.getType().equals("szárazföldi") && nm < 4) {
+                System.out.println(animal.getSpecies() + " seb: " + animal.getMaxSpeed());
+                nm++;
+            }
+        }
+    }
+
+    //3. Melyik a három leggyorsabb állat, ami él Európában? És a három leglassabb?
+
+    public static void fastestAnimalInEu() {
+        fastestAnimalComparator fastestAnimalComparator = new fastestAnimalComparator();
+        slowestAnimalComparator slowestAnimalComparator = new slowestAnimalComparator();
+        animals.sort(fastestAnimalComparator);
+        int n1 = 1;
+        for (Animal animal : animals) {
+            if (animal.getOccurrence().contains("Európa") && n1 < 4) {
+                    System.out.println(animal.getSpecies() + " sebesség: " + animal.getMaxSpeed());
+                    n1++;
+            }
+        }
+        animals.sort(slowestAnimalComparator);
+        int n2 = 1;
+        for (Animal animal : animals) {
+            if (animal.getOccurrence().contains("Európa") && n2 < 4) {
+                System.out.println(animal.getSpecies() + " sebesség: " + animal.getMaxSpeed());
+                n2++;
+            }
+        }
+    }
+
+    //4. Ha a fenti adatok alapján úgy következtetünk egy állat erejére, hogy a legnagyobb sebességét szorozzuk
+    //a állat átlagos tömegével, akkor melyik a három legerősebb állat? És a három leggyengébb?
+
+    public static void force() {
+        strongestComparator strongestComparator = new strongestComparator();
+        weakestComparator weakestComparator = new weakestComparator();
+        animals.sort(strongestComparator);
+        int nr1 = 1;
+        for (Animal animal : animals) {
+            if (nr1 < 4) {
+                System.out.println(animal.getSpecies() + " " + animal.getAvgWeight() + " " + animal.getMaxSpeed());
+                nr1++;
+            }
+        }
+        animals.sort(weakestComparator);
+        int nr2 = 1;
+        for (Animal animal : animals) {
+            if (nr2 < 4) {
+                System.out.println(animal.getSpecies() + " " + animal.getAvgWeight() + " " + animal.getMaxSpeed());
+                nr2++;
+            }
+        }
+    }
+
+    public static void weight() {
+        weakestComparator comparator = new weakestComparator();
+        int n = 1;
+        for (Animal animal : animals) {
+            if (animal.getAvgWeight() > 50 && n < 4) {
+                System.out.println(animal.getSpecies() + " " + animal.getAvgWeight());
+                n++;
             }
         }
     }

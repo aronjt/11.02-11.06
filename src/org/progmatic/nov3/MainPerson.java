@@ -107,4 +107,20 @@ public class MainPerson {
             }
         }
     }
+
+    //Határozd meg, hogy a grafikusoknak milyen más foglalkozásaik vannak még!
+    //A listában a „grafikus” foglalkozásnév már ne szerepeljen, és minden foglalkozás neve egyszer jelenjen meg!
+
+    public void graphicElseJob() {
+        Set<String> jobs = new HashSet<>();
+        for (Person person : people) {
+            String job = person.getProfession().toString();
+            if (job.contains("grafikus")) {
+                jobs.add(job);
+                System.out.println(job);
+            }
+        }
+       // System.out.println(jobs);
+    }
+
 }
