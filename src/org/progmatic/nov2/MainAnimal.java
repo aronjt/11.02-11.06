@@ -18,8 +18,9 @@ public class MainAnimal {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println(animals);
+       // System.out.println(animals);
         fastestAnimal(animals);
+        fastestAndSlowestFieldAnimals(animals);
     }
 
     public static ArrayList<Animal> dataIntoList() throws FileNotFoundException {
@@ -40,7 +41,6 @@ public class MainAnimal {
         Scanner sc = new Scanner(new File("files/foldresz.txt"));
         for (int i = 0; sc.hasNextLine(); i++) {
             String[] row = sc.nextLine().split(",");
-            String name = row[0];
             ArrayList<String> continents = new ArrayList<>(Arrays.asList(row).subList(1, row.length));
             for (Animal animal : animals) {
                 if (animal.getSpecies().equals(row[0])){
@@ -55,8 +55,26 @@ public class MainAnimal {
     public static void fastestAnimal(List<Animal> animals) {
         comparatorBySpeed comparator = new comparatorBySpeed();
 
-        Collections.sort(animals, comparator);
+        animals.sort(comparator);
         System.out.println("A három leggyorsabb állat: " + animals.get(0).getSpecies()+ ", " + animals.get(1).getSpecies() + ", " + animals.get(2).getSpecies());
     }
 
+    public static void fastestAndSlowestFieldAnimals(List<Animal> animals) {
+        fastestTypeAnimalComparator comparator = new fastestTypeAnimalComparator();
+        Collections.sort(animals, comparator);
+        int counter = 1;
+        for (Animal animal : animals) {
+            if (animal.getType().equals("szárazföldi") && counter < 4) {
+                System.out.println("A " + counter + " gyorsabb " + animal.getSpecies());
+                counter++;
+            }
+        }
+        int countSlow = 1;
+        for (Animal animal : animals) {
+            if (animal.getType().equals("szárazföldi") && countSlow < 4) {
+                System.out.println("A " + countSlow + " lasabb " + animal.getSpecies());
+                countSlow++;
+            }
+        }
+    }
 }
