@@ -35,10 +35,7 @@ public class MainAnimal {
         for (int i = 0; sc.hasNextLine(); i++) {
             String[] row = sc.nextLine().split(",");
             String name = row[0];
-            ArrayList<String> continents = new ArrayList<>();
-            for (int j = 1; j < row.length; j++) {
-                continents.add(row[j]);
-            }
+            ArrayList<String> continents = new ArrayList<>(Arrays.asList(row).subList(1, row.length));
             for (Animal animal : animals) {
                 if (animal.getSpecies().equals(row[0])){
                     animal.setOccurrence(continents);
