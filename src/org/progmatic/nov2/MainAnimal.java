@@ -2,18 +2,24 @@ package org.progmatic.nov2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class MainAnimal {
 
-   // public static List<Animal> animals;
+    public static List<Animal> animals;
+
+    static {
+        try {
+            animals = new ArrayList<>(dataIntoList());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println(dataIntoList());
+        System.out.println(animals);
+        fastestAnimal(animals);
     }
 
     public static ArrayList<Animal> dataIntoList() throws FileNotFoundException {
@@ -44,6 +50,13 @@ public class MainAnimal {
             }
         }
         return animals;
+    }
+
+    public static void fastestAnimal(List<Animal> animals) {
+        comparatorBySpeed comparator = new comparatorBySpeed();
+
+        Collections.sort(animals, comparator);
+        System.out.println("A három leggyorsabb állat: " + animals.get(0).getSpecies()+ ", " + animals.get(1).getSpecies() + ", " + animals.get(2).getSpecies());
     }
 
 }
