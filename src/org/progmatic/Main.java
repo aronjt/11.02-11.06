@@ -16,6 +16,9 @@ public class Main {
         people.balett();
         //4.
         people.mostPromoted();
-
+        //5.
+        people.professionNum();
+        //6.
+        people.pittiKatalin();
     }
 }

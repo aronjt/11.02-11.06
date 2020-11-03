@@ -43,7 +43,7 @@ public class MainPerson {
     //Sorold fel ábécérendben a 2013-ban kitüntetettek nevét! Írd meg a feladatot comparator segítségével is!
 
     public void promotedAfter() {
-        Collections.sort(people, new orderNameComparator());
+        people.sort(new orderNameComparator());
         for (Person person : people) {
             if (person.getYear() == 2013) {
                 System.out.println(person.getName());
@@ -83,4 +83,28 @@ public class MainPerson {
     //Add meg, hogy az egyes foglalkozásnevekhez hány művész tartozik!
     //A képernyőn darabszám szerint csökkenően jelenítsd meg a foglalkozásneveket és a darabszámokat!
 
+    public void professionNum() {
+        Map<String, List<Person>> peopleByProfession = new HashMap<>();
+        for (Person person : people) {
+            peopleByProfession.putIfAbsent(person.getProfession().toString(), new ArrayList<>());
+            peopleByProfession.get(person.getProfession().toString()).add(person);
+        }
+        System.out.println(peopleByProfession);
+    }
+
+    //Sorold fel Pitti Katalinnal együtt azoknak a nevét és a kitüntetés évét, akik vele azonos foglalkozásúak!
+
+    public void pittiKatalin() {
+        List<String> profession = new ArrayList<>();
+        for (Person person : people) {
+            if (person.getName().equals("Pitti Katalin")) {
+                profession = person.getProfession();
+            }
+        }
+        for (Person person : people) {
+            if (person.getProfession().toString().contains(profession.toString())) {
+                System.out.println(person.getName() + " " + person.getYear());
+            }
+        }
+    }
 }
