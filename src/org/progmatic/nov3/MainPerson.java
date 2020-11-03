@@ -84,12 +84,18 @@ public class MainPerson {
     //A képernyőn darabszám szerint csökkenően jelenítsd meg a foglalkozásneveket és a darabszámokat!
 
     public void professionNum() {
-        Map<String, List<Person>> peopleByProfession = new HashMap<>();
+        Map<String, List<String>> peopleByProfession = new HashMap<>();
         for (Person person : people) {
-            peopleByProfession.putIfAbsent(person.getProfession().toString(), new ArrayList<>());
-            peopleByProfession.get(person.getProfession().toString()).add(person);
+            for (int i = 0; i < person.getProfession().size(); i++) {
+                peopleByProfession.putIfAbsent(person.getProfession().get(i), new ArrayList<>());
+                peopleByProfession.get(person.getProfession().get(i)).add(person.getName());
+            }
         }
-        System.out.println(peopleByProfession);
+        Map<String, Integer> trePeople = new TreeMap<>();
+        for (String s : peopleByProfession.keySet()) {
+            trePeople.putIfAbsent(s, peopleByProfession.get(s).size());
+        }
+        System.out.println(trePeople);
     }
 
     //Sorold fel Pitti Katalinnal együtt azoknak a nevét és a kitüntetés évét, akik vele azonos foglalkozásúak!
