@@ -8,7 +8,7 @@ public class Animal {
     private double avgWeight;
     private double maxSpeed;
     private double avgAge;
-    private List<String[]> occurrence;
+    private List<String> occurrence;
 
     public String getSpecies() {
         return species;
@@ -30,20 +30,21 @@ public class Animal {
         return avgAge;
     }
 
-    public List<String[]> getOccurrence() {
+    public List<String> getOccurrence() {
         return occurrence;
     }
 
-    public void setOccurrence(List<String[]> occurrence) {
+    public void setOccurrence(List<String> occurrence) {
         this.occurrence = occurrence;
     }
 
-    public Animal(String species, String type, double avgWeight, double maxSpeed, double avgAge) {
+    public Animal(String species, String type, double avgWeight, double maxSpeed, double avgAge, List<String> occurrence) {
         this.species = species;
         this.type = type;
         this.avgWeight = avgWeight;
         this.maxSpeed = maxSpeed;
         this.avgAge = avgAge;
+        this.occurrence = occurrence;
     }
 
     @Override

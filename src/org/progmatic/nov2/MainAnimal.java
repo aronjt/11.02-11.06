@@ -9,44 +9,44 @@ import java.util.Scanner;
 
 public class MainAnimal {
 
-    public static List<Animal> animals;
+   // public static List<Animal> animals;
 
-    static {
-        try {
-            animals = new ArrayList<>(animals());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void main(String[] args) throws FileNotFoundException {
-       // System.out.println(animals);
-        System.out.println(animalsOccurrence());
+        System.out.println(dataIntoList());
     }
 
-    public static List<Animal> animals() throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("files/animals.txt"));
-        List<Animal> animals = new ArrayList<>();
-        while (sc.hasNextLine()) {
-            String[] splitit = sc.nextLine().split(",");
-            double avgWeight = Double.parseDouble(splitit[2]);
-            double maxSpeed = Double.parseDouble(splitit[3]);
-            double avgAge = Double.parseDouble(splitit[4]);
-            Animal animal = new Animal(splitit[0], splitit[1], avgWeight, maxSpeed, avgAge);
-            animals.add(animal);
+    public static ArrayList<Animal> dataIntoList() throws FileNotFoundException {
+        ArrayList<Animal> animals = new ArrayList<>();
+        Scanner s = new Scanner(new File("files/animals.txt"));
+        for (int i = 0; s.hasNextLine(); i++) {
+            String[] row = s.nextLine().split(",");
+            String name = row[0];
+            String type = row[1];
+            String weight = row[2];
+            double fweight = Float.parseFloat(weight);
+            String speed = row[3];
+            double fspeed = Float.parseFloat(speed);
+            String age = row[4];
+            double fage = Float.parseFloat(age);
+            animals.add(new Animal(name, type, fweight, fspeed, fage, new ArrayList<>()));
+        }
+        Scanner sc = new Scanner(new File("files/foldresz.txt"));
+        for (int i = 0; sc.hasNextLine(); i++) {
+            String[] row = sc.nextLine().split(",");
+            String name = row[0];
+            ArrayList<String> continents = new ArrayList<>();
+            for (int j = 1; j < row.length; j++) {
+                continents.add(row[j]);
+            }
+            for (Animal animal : animals) {
+                if (animal.getSpecies().equals(row[0])){
+                    animal.setOccurrence(continents);
+                    break;
+                }
+            }
         }
         return animals;
     }
 
-    public static List<String[]> animalsOccurrence() throws FileNotFoundException {
-        Scanner sc2 = new Scanner(new File("files/foldresz.txt"));
-        List<String[]> animalOcc = new ArrayList<>();
-        while (sc2.hasNextLine()) {
-            String[] splitit2 = sc2.nextLine().split(",");
-            animalOcc.add(splitit2);
-        }
-        return animalOcc;
-    }
-
-    //csinéljak új classt
 }
