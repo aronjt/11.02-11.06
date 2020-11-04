@@ -30,4 +30,10 @@ public class Reccsegi {
     public void outPrint() {
         System.out.println(candidates);
     }
+
+    //2. Hány képviselőjelölt indult a helyhatósági választáson?
+
+    public void totalNumOfCandidates() {
+        System.out.println("A helyhatósági választáson " + candidates.size() + " képviselőjelölt indult.");
+    }
 }
