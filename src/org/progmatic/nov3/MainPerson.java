@@ -51,6 +51,11 @@ public class MainPerson {
         }
     }
 
+    public void promoted2013() {
+        people.sort(new orderPromoted());
+        System.out.println(people);
+    }
+
     //Balettel foglalkozó díjazottakra vagyunk kíváncsiak, de többféle ezzel kapcsolatos hivatás létezik.
     //Írasd ki azoknak a nevét és foglalkozását, akik foglalkozási neve tartalmazza a „balett” szórészletet!
     public void balett() {

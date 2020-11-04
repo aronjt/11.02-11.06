@@ -22,5 +22,6 @@ public class Main {
         people.pittiKatalin();
         //7.
         people.graphicElseJob();
+
     }
 }
