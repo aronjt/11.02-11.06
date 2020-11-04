@@ -1,4 +1,4 @@
-package org.progmatic.nov2.hazi;
+package org.progmatic.nov3.hazi;
 
 public class Candidate {
     private final int constituency;
