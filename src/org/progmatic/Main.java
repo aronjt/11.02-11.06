@@ -1,13 +1,11 @@
 package org.progmatic;
 
-import org.progmatic.nov3.MainPerson;
-
 import java.io.FileNotFoundException;
 
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        MainPerson people = new MainPerson();
+       /* MainPerson people = new MainPerson();
         //1.
         people.peopleReader();
         //2.
@@ -21,7 +19,7 @@ public class Main {
         //6.
         people.pittiKatalin();
         //7.
-        people.graphicElseJob();
+        people.graphicElseJob();*/
 
     }
 }
