@@ -54,4 +54,17 @@ public class Person {
     public void setSwipes(int key, String swipe) {
         swipes.put(key, swipe);
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                ", hairColour='" + hairColour + '\'' +
+                ", eyeColour='" + eyeColour + '\'' +
+                ", swipes=" + swipes +
+                '}';
+    }
 }

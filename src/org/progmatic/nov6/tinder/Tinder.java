@@ -27,7 +27,6 @@ public class Tinder {
             peopleRead.add(new Person(id, name, sex, age, hairColour, eyeColour));
         }
         sc = new Scanner(new File("files/swipes.txt"));
-        Map<Integer, String > swipes = new HashMap<>();
         while (sc.hasNextLine()) {
             String[] line = sc.nextLine().split(",");
             for (Person person : peopleRead) {
@@ -52,10 +51,32 @@ public class Tinder {
 
     public void queenOfTheApp() {
         int sum = 0;
+        int compare = 0;
+        int keeper = 0;
+        String name = null;
         for (Person person : people) {
-            for (:) {
-
+            if (person.getSex().equals("FEMALE")) {
+                for (Person person1 : people) {
+                    if (person.getId() == person1.getId()) {
+                        break;
+                    } else {
+                        for (Integer integer : person1.getSwipes().keySet()) {
+                            if (integer == person.getId()) {
+                                if (person1.getSwipes().get(integer).equals("LIKE")) {
+                                    sum++;
+                                    if (sum > compare) {
+                                        compare = sum;
+                                        name = person.getName();
+                                        keeper = sum;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
+            sum = 0;
         }
+        System.out.println("A tinder kurvája " + name + ", " + keeper + " like-al");
     }
 }
