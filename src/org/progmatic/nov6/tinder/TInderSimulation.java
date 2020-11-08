@@ -12,5 +12,7 @@ public class TInderSimulation {
         tinder.ugly();
         tinder.matches();
         tinder.blueEyed();
+        tinder.biggestAgeDif();
+        System.out.println(tinder.homosexual());
     }
 }

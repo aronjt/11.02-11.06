@@ -204,4 +204,41 @@ public class Tinder {
         }
         System.out.println(userSum + " kék szemű felhasználó van, aki több szőke felhasználót húzott jobbra, mint barna hajút balra");
     }
+
+    //Hány év a legnagyobb korkülönbségű szimpatikusnak jelölés az adatbázisban?
+
+    public void biggestAgeDif() {
+        int ageDif = 0;
+        for (Person person : people) {
+            for (Person person1 : people) {
+                if (person.getId() != person1.getId()) {
+                    for (Integer key : person.getSwipes().keySet()) {
+                        if (key == person1.getId() && person.getSwipes().get(key).equals("LIKE")) {
+                            if (Math.abs(person.getAge()-person1.getAge()) > ageDif) {
+                                ageDif = person.getAge()-person1.getAge();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(ageDif + " év a legnagyobb korkülönbségű szimpatikusnak jelölés");
+    }
+
+    //Van-e nem heteroszexuális szimpatikusnak jelölés az alkalmazás adatbázisában?
+
+    public boolean homosexual() {
+        for (Person person : people) {
+            for (Person person1 : people) {
+                if (person.getId() != person1.getId()) {
+                    for (Integer key : person.getSwipes().keySet()) {
+                        if (key == person1.getId() && person.getSex().equals(person1.getSex())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
