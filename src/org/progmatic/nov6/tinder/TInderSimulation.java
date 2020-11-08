@@ -9,5 +9,6 @@ public class TInderSimulation {
         tinder.queenOfTheApp();
         tinder.pickyUser();
         tinder.gotNoType();
+        tinder.ugly();
     }
 }

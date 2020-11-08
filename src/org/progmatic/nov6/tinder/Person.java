@@ -67,4 +67,8 @@ public class Person {
                 ", swipes=" + swipes +
                 '}';
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

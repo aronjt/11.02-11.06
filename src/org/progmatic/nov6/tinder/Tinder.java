@@ -57,9 +57,7 @@ public class Tinder {
         for (Person person : people) {
             if (person.getSex().equals("FEMALE")) {
                 for (Person person1 : people) {
-                    if (person.getId() == person1.getId()) {
-                        break;
-                    } else {
+                    if (person.getId() != person1.getId()) {
                         for (Integer integer : person1.getSwipes().keySet()) {
                             if (integer == person.getId()) {
                                 if (person1.getSwipes().get(integer).equals("LIKE")) {
@@ -124,5 +122,36 @@ public class Tinder {
             totalLikes = 0;
         }
         System.out.println("Összesen " + usersNum + " elkeseredett felhasználó volt.");
+    }
+
+    //Hány olyan felhasználó volt, akit senki sem húzott jobbra az alkalmazásban?
+
+    public void ugly() {
+        int uglies = 0;
+        int likes;
+        int dislikes;
+        List<String> names = new ArrayList<>();
+        for (Person person : people) {
+            likes = 0;
+            dislikes = 0;
+            for (Person person1 : people) {
+                if (person.getId() != person1.getId()) {
+                    for (Integer key : person1.getSwipes().keySet()) {
+                        if (key == person.getId()) {
+                            if (person1.getSwipes().get(key).equals("LIKE")) {
+                                likes++;
+                            } else {
+                                dislikes++;
+                            }
+                        }
+                    }
+                }
+            }
+            if (likes == 0 && dislikes > 0) {
+                uglies++;
+                names.add(person.getName());
+            }
+        }
+        System.out.println(uglies + " csúnnya ember volt, akit senki sem húzott jobbra." + names);
     }
 }
