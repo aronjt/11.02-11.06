@@ -10,5 +10,6 @@ public class TInderSimulation {
         tinder.pickyUser();
         tinder.gotNoType();
         tinder.ugly();
+        tinder.matches();
     }
 }

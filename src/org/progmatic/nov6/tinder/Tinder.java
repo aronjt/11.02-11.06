@@ -154,4 +154,27 @@ public class Tinder {
         }
         System.out.println(uglies + " csúnnya ember volt, akit senki sem húzott jobbra." + names);
     }
+
+    //Hány “match” van a felhasználók között a jelenlegi állapot szerint? (Match-nek hívjuk azt az állapotot,
+    //amikor két felhasználó egymást kölcsönösen szimpatikusnak jelöli.)
+
+    public void matches() {
+        int matches = 0;
+        for (Person person : people) {
+            for (Person person1 : people) {
+                if (person.getId() != person1.getId()) {
+                    for (Integer key : person.getSwipes().keySet()) {
+                       if (key == person1.getId()) {
+                           for (Integer key1 : person1.getSwipes().keySet()) {
+                               if (key1 == person.getId() && person.getSwipes().get(key).equals("LIKE") && person1.getSwipes().get(key1).equals("LIKE")) {
+                                   matches++;
+                               }
+                           }
+                       }
+                    }
+                }
+            }
+        }
+        System.out.println("Ennyi match volt: " + matches/2);
+    }
 }
