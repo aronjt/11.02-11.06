@@ -85,7 +85,7 @@ public class Tinder {
 
     public void pickyUser() {
         double rate = 1.0;
-        int totalSwipes = 0;
+        int totalSwipes;
         int totalLikes = 0;
         String name = null;
         for (Person person : people) {
@@ -109,7 +109,7 @@ public class Tinder {
 
     public void gotNoType() {
         int usersNum = 0;
-        int totalSwipes = 0;
+        int totalSwipes;
         int totalLikes = 0;
         for (Person person : people) {
             totalSwipes = person.getSwipes().size();
