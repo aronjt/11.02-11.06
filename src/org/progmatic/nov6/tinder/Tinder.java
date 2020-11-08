@@ -177,4 +177,31 @@ public class Tinder {
         }
         System.out.println("Ennyi match volt: " + matches/2);
     }
+
+    //Hány olyan kék szemű felhasználó van, aki több szőke felhasználót húzott jobbra, mint barna hajút balra?
+
+    public void blueEyed() {
+        int userSum = 0;
+        for (Person person : people) {
+            int blondeLike = 0;
+            int brownDislike = 0;
+            if (person.getEyeColour().equals("BLUE")) {
+                for (Person person1 : people) {
+                    if (person.getId() != person1.getId()) {
+                        for (Integer key : person.getSwipes().keySet()) {
+                            if (person.getSwipes().get(key).equals("LIKE") && key == person1.getId() && person1.getHairColour().equals("BLONDE")) {
+                                blondeLike++;
+                            } else if (person.getSwipes().get(key).equals("DISLIKE") && key == person1.getId() && person1.getHairColour().equals("BROWN")) {
+                                brownDislike++;
+                            }
+                        }
+                    }
+                }
+            }
+            if (blondeLike > brownDislike) {
+                userSum++;
+            }
+        }
+        System.out.println(userSum + " kék szemű felhasználó van, aki több szőke felhasználót húzott jobbra, mint barna hajút balra");
+    }
 }

@@ -11,5 +11,6 @@ public class TInderSimulation {
         tinder.gotNoType();
         tinder.ugly();
         tinder.matches();
+        tinder.blueEyed();
     }
 }
