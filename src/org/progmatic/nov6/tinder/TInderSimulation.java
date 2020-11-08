@@ -7,5 +7,7 @@ public class TInderSimulation {
         Tinder tinder = new Tinder();
        // tinder.kiir();
         tinder.queenOfTheApp();
+        tinder.pickyUser();
+        tinder.gotNoType();
     }
 }

@@ -79,4 +79,50 @@ public class Tinder {
         }
         System.out.println("A tinder kurvája " + name + ", " + keeper + " like-al");
     }
+
+    //Melyik felhasználó a legválogatósabb? (Melyik felhasználónál a legkisebb az az arány,
+    //hogy hány felhasználót jelölt szimpatikusnak az összes jelöléséhez képest.)
+
+    public void pickyUser() {
+        double rate = 1.0;
+        int totalSwipes = 0;
+        int totalLikes = 0;
+        String name = null;
+        for (Person person : people) {
+            totalSwipes = person.getSwipes().size();
+            for (Integer key : person.getSwipes().keySet()) {
+                if (person.getSwipes().get(key).equals("LIKE")) {
+                    totalLikes++;
+                }
+            }
+            if ((double) totalLikes / totalSwipes < rate && (double) totalLikes / totalSwipes > 0) {
+                rate = (double) totalLikes / totalSwipes;
+                name = person.getName();
+            }
+            totalLikes = 0;
+        }
+        System.out.println("A legválógatósabb felhasználó: " + name + " " + rate);
+    }
+
+    //Hány olyan elkeseredett felhasználó volt, aki mindenkit szimpatikusnak jelölt?
+    //(Azaz nem volt DISLIKE jelölése, csak LIKE.)
+
+    public void gotNoType() {
+        int usersNum = 0;
+        int totalSwipes = 0;
+        int totalLikes = 0;
+        for (Person person : people) {
+            totalSwipes = person.getSwipes().size();
+            for (Integer key : person.getSwipes().keySet()) {
+                if (person.getSwipes().get(key).equals("LIKE")) {
+                    totalLikes++;
+                }
+            }
+            if (totalLikes == totalSwipes) {
+                usersNum++;
+            }
+            totalLikes = 0;
+        }
+        System.out.println("Összesen " + usersNum + " elkeseredett felhasználó volt.");
+    }
 }
